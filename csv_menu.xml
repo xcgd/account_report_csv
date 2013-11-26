@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Main menu item other CSV report commands will be shown under. -->
+
+        <menuitem id="finance_reports_csv_menu" name="Legal Reports Export"
+            parent="account.menu_finance_legal_statement" sequence="20" />
+
+        <!-- Menu item for general.ledger.csv. -->
+
+        <record id="action_account_general_ledger_csv_menu" model="ir.actions.act_window">
+            <field name="name">General Ledger Export</field>
+            <field name="res_model">general.ledger.csv</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="account_general_ledger_view_csv" />
+            <field name="target">new</field>
+        </record>
+
+        <menuitem icon="STOCK_EXECUTE" name="General Ledger Export"
+            action="action_account_general_ledger_csv_menu" id="menu_general_ledger_csv"
+            parent="finance_reports_csv_menu" sequence="9" />
+
+        <!-- Menu item for trial.balance.csv. -->
+
+        <record id="action_account_trial_balance_csv_menu" model="ir.actions.act_window">
+            <field name="name">Trial Balance Export</field>
+            <field name="res_model">trial.balance.csv</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="account_trial_balance_view_csv" />
+            <field name="target">new</field>
+        </record>
+
+        <menuitem icon="STOCK_EXECUTE" name="Trial Balance Export"
+            action="action_account_trial_balance_csv_menu" id="menu_trial_balance_csv"
+            parent="finance_reports_csv_menu" sequence="10" />
+
+    </data>
+</openerp>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Inherit from account_report_webkit.account_trial_balance_view_webkit. 
+            Copy views for multiple inheritance (see comment in account_report_webkit/wizard/trial_balance_wizard_view.xml). -->
+
+        <record id="account_trial_balance_view_csv" model="ir.ui.view">
+            <field name="name">Trial Balance Export</field>
+            <field name="model">trial.balance.csv</field>
+
+            <!-- Copy from account_report_webkit.account_trial_balance_view_webkit. -->
+            <field name="inherit_id" ref="account.account_common_report_view" />
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='target_move']" position="after">
+                        <newline />
+                        <field name="ledger_types" widget="many2many_tags" />
+                    </xpath>
+                    <xpath expr="/form/label[@string='']" position="replace">
+                        <separator string="Trial Balance" colspan="4" />
+                        <label nolabel="1" colspan="4"
+                            string="This report allows you to print or generate a pdf of your trial balance allowing you to quickly check the balance of each of your accounts in a single report" />
+                    </xpath>
+                    <field name="chart_account_id" position='attributes'>
+                        <attribute name="colspan">4</attribute>
+                    </field>
+                    <page name="filters" position="after">
+                        <page string="Accounts Filters" name="accounts">
+                            <separator string="Print only" colspan="4" />
+                            <field name="account_ids" colspan="4" nolabel="1"
+                                domain="[('type', '=', 'view')]">
+                                <tree>
+                                    <field name="code" />
+                                    <field name="name" />
+                                    <field name="type" />
+                                    <field name="company_id" />
+                                </tree>
+                            </field>
+                            <group>
+                                <field name="account_from" />
+                                <field name="account_to" />
+                            </group>
+                        </page>
+                        <page string="Currency Filter" name="currencies">
+                            <separator string="Print only" colspan="4" />
+                            <field name="currency_id" colspan="4" nolabel="1" />
+                        </page>
+                        <page string="Layout Options" name="layout_options">
+                            <group colspan="4" col="2">
+                                <field name="analytic_codes" />
+                                <field name="include_zero" />
+                            </group>
+                        </page>
+                        <page name="placeholder" />
+                    </page>
+                    <page name="journal_ids" position="attributes">
+                        <attribute name="invisible">True</attribute>
+                    </page>
+                    <page name="filters" position="attributes">
+                        <attribute name="string">Time Filters</attribute>
+                    </page>
+                    <field name="period_from" position="attributes">
+                        <attribute name="domain">[('fiscalyear_id', '=',
+                            fiscalyear_id), ('special', '=', False)]
+                        </attribute>
+                    </field>
+                    <field name="period_to" position="attributes">
+                        <attribute name="domain">[('fiscalyear_id', '=',
+                            fiscalyear_id), ('special', '=', False)]
+                        </attribute>
+                    </field>
+                    <field name="fiscalyear_id" position="attributes">
+                        <attribute name="attrs">{'required': [('filter', '=',
+                            'filter_opening')]}
+                        </attribute>
+                    </field>
+
+                    <!-- Changes for this view. -->
+                    <xpath expr="//button[@name='check_report']" position="replace">
+                        <button name="check_report" string="Export as CSV"
+                            type="object" default_focus="1" class="oe_highlight" />
+                    </xpath>
+                    <xpath expr="//field[@name='ledger_types']" position="after">
+                        <newline />
+                        <field name="csv_delimiter" />
+                        <newline />
+                        <field name="csv_quotechar" />
+                        <field name="name" invisible="1" />
+                        <field name="data" invisible="1" readonly="1"
+                            filename="name" />
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="account_trial_balance_view_csv_done" model="ir.ui.view">
+            <field name="name">account_trial_balance_view_csv_done</field>
+            <field name="model">trial.balance.csv</field>
+            <field name="arch" type="xml">
+                <form string="Trial Balance Export" version="7.0">
+                    <group cols="2">
+                        <field name="name" invisible="1" />
+                        <label string="The CSV file has been successfully generated." />
+                        <field name="data" filename="name" nolabel="1" />
+                    </group>
+                    <footer>
+                        <button special="cancel" string="Close" type="object" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

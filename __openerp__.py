@@ -20,34 +20,28 @@
 ##############################################################################
 
 {
-    "name" : "Account Report CSV",
-    "version" : "0.1",
-    "author" : "XCG Consulting",
+    "name": "Account Report CSV",
+    "version": "1.0",
+    "author": "XCG Consulting",
     "website": "http://www.openerp-experts.com",
     "category": 'Accounting',
     "description": """
-    
-    Allows you to export a csv file based on accounting balances
-    
-    - Trial Balance
-    - Analytic Balance (based on A codes)
-    - Ageing Balance
-    
-    You can filter by period and disply amounts in currency
-    
-     
+Export reports as CSV:
+- General Ledger
+- Trial Balance
+
+Provides the usual filters (by account, period, currency, etc).
     """,
-    "depends" : [
-                 'account',
-		 'account_streamline',
-                 ],
+    "depends": [
+        'account_report_webkit',
+    ],
     "data": [
-            'wizard/account_report_csv_view.xml',
-            'account_report_csv_menu.xml',
-                  ],
+        'wizard/general_ledger_csv_wizard_view.xml',
+        'wizard/trial_balance_csv_wizard_view.xml',
+        'csv_menu.xml',
+    ],
     'demo_xml': [],
     'test': [],
     'installable': True,
     'active': False,
 }
-
