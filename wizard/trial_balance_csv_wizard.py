@@ -41,22 +41,39 @@ class AccountTrialBalanceCsvWizard(orm.TransientModel):
 
         # Initialize the report class manually and get desired values.
         objects = trial_balance_csv.TrialBalanceCsv(
-            cr, uid, context=context).get_objects(res['datas'], ids)
+            cr, uid, context=context
+        ).get_objects(res['datas'], ids)
 
         # Generate the CSV data.
         csv_data = StringIO.StringIO()
-        csv_writer = UnicodeWriter(csv_data,
-                                   delimiter=str(this.csv_delimiter),
-                                   quotechar=str(this.csv_quotechar))
+        csv_writer = UnicodeWriter(
+            csv_data,
+            delimiter=str(this.csv_delimiter),
+            quotechar=str(this.csv_quotechar)
+        )
+
+        # Write the first line (field names).
         csv_writer.writerows([[
-                               account.code or u'',
-                               account.name or u'',
-                               (account.currency_id or
-                                account.company_id.currency_id).name or u'',
-                               str(account.debit),
-                               str(account.credit),
-                               str(account.balance),
-                               ] for account in objects])
+            'code',
+            'description',
+            'currency',
+            'other_debit',
+            'other_credit',
+            'other_balance',
+        ]])
+
+        # Write the actual data.
+        csv_writer.writerows([[
+            account.code or u'',
+            account.name or u'',
+            (
+                account.currency_id or
+                account.company_id.currency_id
+            ).name or u'',
+            str(account.debit),
+            str(account.credit),
+            str(account.balance),
+        ] for account in objects])
 
         # Save the CSV data in a field so the user can then download it.
         self.write(cr, uid, ids, {

@@ -41,35 +41,63 @@ class AccountGeneralLedgerCsvWizard(orm.TransientModel):
 
         # Initialize the report class manually and get desired values.
         objects = general_ledger_csv.GeneralLedgerCsv(
-            cr, uid, context=context).get_objects(res['datas'], ids)
+            cr, uid, context=context
+        ).get_objects(res['datas'], ids)
 
         # Generate the CSV data.
         csv_data = StringIO.StringIO()
-        csv_writer = UnicodeWriter(csv_data,
-                                   delimiter=str(this.csv_delimiter),
-                                   quotechar=str(this.csv_quotechar))
+        csv_writer = UnicodeWriter(
+            csv_data,
+            delimiter=str(this.csv_delimiter),
+            quotechar=str(this.csv_quotechar)
+        )
+
+        # Write the first line (field names).
+        csv_writer.writerows([[
+            'state',
+            'account_code',
+            'account_name',
+            'partner',
+            'period',
+            'transaction_date',
+            'currency',
+            'base_debit',
+            'base_credit',
+            'other_debit',
+            'other_credit',
+            'transaction_ref',
+            'internal_number',
+            'due_date',
+            'allocation_date',
+            'allocation_ref',
+        ]])
+
+        # Write the actual data.
         for account in objects:
             csv_writer.writerows([[
-                                   line.get('state') or u'',
-                                   account.code or u'',
-                                   account.name or u'',
-                                   line.get('partner_name') or u'',
-                                   line.get('period_code') or u'',
-                                   line.get('date') or u'',
-                                   (line.get('currency_code') or
-                                    (account.currency_id or
-                                     account.company_id.currency_id).name or
-                                    u''),
-                                   str(line.get('debit')),
-                                   str(line.get('credit')),
-                                   str(line.get('debit_curr')),
-                                   str(line.get('credit_curr')),
-                                   line.get('lname') or u'',
-                                   line.get('lref') or u'',
-                                   line.get('date_maturity') or u'',
-                                   line.get('date_reconcile') or u'',
-                                   line.get('rec_name') or u'',
-                                   ] for line in account.ledger_lines])
+                line.get('state') or u'',
+                account.code or u'',
+                account.name or u'',
+                line.get('partner_name') or u'',
+                line.get('period_code') or u'',
+                line.get('date') or u'',
+                (
+                    line.get('currency_code') or
+                    (
+                        account.currency_id or
+                        account.company_id.currency_id
+                    ).name or
+                u''),
+                str(line.get('debit')),
+                str(line.get('credit')),
+                str(line.get('debit_curr')),
+                str(line.get('credit_curr')),
+                line.get('lname') or u'',
+                line.get('lref') or u'',
+                line.get('date_maturity') or u'',
+                line.get('date_reconcile') or u'',
+                line.get('rec_name') or u'',
+            ] for line in account.ledger_lines])
 
         # Save the CSV data in a field so the user can then download it.
         self.write(cr, uid, ids, {
