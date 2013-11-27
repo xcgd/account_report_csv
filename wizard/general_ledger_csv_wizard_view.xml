@@ -17,7 +17,9 @@
                         <newline />
                         <field name="allocated" />
                         <newline />
-                        <field name="ledger_types" widget="many2many_tags" />
+                        <field name="ledger_type"
+                            attrs="{'invisible': [('ledger_type_available', '=', False)]}" />
+                        <field name="ledger_type_available" />
                         <newline />
                     </xpath>
 
@@ -85,7 +87,7 @@
                         <button name="check_report" string="Export as CSV"
                             type="object" default_focus="1" class="oe_highlight" />
                     </xpath>
-                    <xpath expr="//field[@name='ledger_types']" position="after">
+                    <xpath expr="//field[@name='ledger_type']" position="after">
                         <newline />
                         <field name="csv_delimiter" />
                         <newline />
