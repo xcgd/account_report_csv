@@ -39,6 +39,16 @@ class AccountGeneralLedgerCsvWizard(orm.TransientModel):
 
         this = self.browse(cr, uid, ids)[0]
 
+        # Get analytic code names.
+        a_code_obj = self.pool.get('analytic.code')
+        a_codes = a_code_obj.search(cr, uid, [], context=context)
+        a_codes = a_code_obj.read(cr, uid, a_codes, ['name'], context=context)
+        a_codes = {
+            a_code['id']: a_code['name']
+            for a_code in a_codes
+        }
+        a_codes[0] = ''
+
         # Initialize the report class manually and get desired values.
         objects = general_ledger_csv.GeneralLedgerCsv(
             cr, uid, context=context
@@ -72,6 +82,13 @@ class AccountGeneralLedgerCsvWizard(orm.TransientModel):
             'due_date',
             'allocation_date',
             'allocation_ref',
+            # TODO manage analytic fields better (take their name, allow an
+            # infinity of fields...)
+            'line_analytic_1',
+            'line_analytic_2',
+            'line_analytic_3',
+            'line_analytic_4',
+            'line_analytic_5',
         ]])
 
         # Write the actual data.
@@ -99,6 +116,11 @@ class AccountGeneralLedgerCsvWizard(orm.TransientModel):
                 line.get('date_maturity') or u'',
                 line.get('date_reconcile') or u'',
                 line.get('rec_name') or u'',
+                a_codes[line.get('a1_id') or 0],
+                a_codes[line.get('a2_id') or 0],
+                a_codes[line.get('a3_id') or 0],
+                a_codes[line.get('a4_id') or 0],
+                a_codes[line.get('a5_id') or 0],
             ] for line in account.ledger_lines])
 
         # Save the CSV data in a field so the user can then download it.
