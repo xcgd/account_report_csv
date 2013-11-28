@@ -74,7 +74,7 @@ class AccountTrialBalanceCsvWizard(orm.TransientModel):
             str(account.credit),
             str(account.balance),
         ] for account in objects
-        if account.to_display
+        if account.to_display and account.type != 'view'
         ])
 
         # Save the CSV data in a field so the user can then download it.
