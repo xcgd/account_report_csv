@@ -61,7 +61,6 @@
                                     field add our settings. -->
                                 <field name="centralize" invisible="1" />
                                 <field name="analytic_codes" />
-                                <field name="include_zero" />
                             </group>
                         </page>
                     </page>
