@@ -56,9 +56,9 @@
                         </page>
                         <page string="Layout Options" name="layout_options">
                             <group colspan="4" col="2">
-                                <field name="amount_currency" />
-                                <!-- Kill 2 birds with 1 stone: hide the "centralize" 
-                                    field add our settings. -->
+                                <!-- Hide the "amount_currency" and "centralize" 
+                                    fields and add our settings. -->
+                                <field name="amount_currency" invisible="1" />
                                 <field name="centralize" invisible="1" />
                                 <field name="analytic_codes" />
                             </group>
