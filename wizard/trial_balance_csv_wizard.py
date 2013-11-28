@@ -67,13 +67,15 @@ class AccountTrialBalanceCsvWizard(orm.TransientModel):
             account.code or u'',
             account.name or u'',
             (
-                account.currency_id or
-                account.company_id.currency_id
-            ).name or u'',
+                (this.currency_id or account.company_id.currency_id).name
+                 or u''
+            ),
             str(account.debit),
             str(account.credit),
             str(account.balance),
-        ] for account in objects])
+        ] for account in objects
+        if account.to_display
+        ])
 
         # Save the CSV data in a field so the user can then download it.
         self.write(cr, uid, ids, {

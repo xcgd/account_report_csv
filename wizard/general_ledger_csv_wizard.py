@@ -83,11 +83,9 @@ class AccountGeneralLedgerCsvWizard(orm.TransientModel):
                 line.get('date') or u'',
                 (
                     line.get('currency_code') or
-                    (
-                        account.currency_id or
-                        account.company_id.currency_id
-                    ).name or
-                u''),
+                    account.company_id.currency_id.name or
+                    u''
+                ),
                 str(line.get('debit')),
                 str(line.get('credit')),
                 str(line.get('debit_curr')),
