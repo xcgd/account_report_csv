@@ -66,10 +66,7 @@ class AccountTrialBalanceCsvWizard(orm.TransientModel):
         csv_writer.writerows([[
             account.code or u'',
             account.name or u'',
-            (
-                (this.currency_id or account.company_id.currency_id).name
-                 or u''
-            ),
+            this.currency_id.name if this.currency_id else u'',
             str(account.debit),
             str(account.credit),
             str(account.balance),
