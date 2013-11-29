@@ -27,8 +27,8 @@
     "category": 'Accounting',
     "description": """
 Export reports as CSV:
-- General Ledger
-- Trial Balance
+ - General Ledger
+ - Trial Balance
 
 Provides the usual filters (by account, period, currency, etc).
     """,
