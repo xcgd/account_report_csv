@@ -57,8 +57,8 @@ class AccountTrialBalanceCsvWizard(orm.TransientModel):
             'code',
             'description',
             'currency',
-            'other_debit',
-            'other_credit',
+            'debit',
+            'credit',
             'other_balance',
         ]])
 
