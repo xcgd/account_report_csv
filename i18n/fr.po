@@ -1,0 +1,449 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* account_report_csv
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-06 11:47+0000\n"
+"PO-Revision-Date: 2013-12-06 11:47+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,analytic_codes:0
+#: field:trial.balance.csv,analytic_codes:0
+msgid "Ouput element"
+msgstr "Élement de sortie"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,account_ids:0
+#: field:trial.balance.csv,account_ids:0
+msgid "Filter on accounts"
+msgstr "Filtre par compte"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,account_from:0
+#: field:trial.balance.csv,account_from:0
+msgid "From account"
+msgstr "Du compte"
+
+#. module: account_report_csv
+#: help:general.ledger.csv,amount_currency:0
+msgid "It adds the currency column"
+msgstr "Ajoute la colonne des devises"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,centralize:0
+msgid "Activate Centralization"
+msgstr "Activer la centralisation"
+
+#. module: account_report_csv
+#: help:general.ledger.csv,account_ids:0
+#: help:trial.balance.csv,account_ids:0
+msgid "Only selected accounts will be printed. Leave empty to print all accounts."
+msgstr "Seuls les comptes sélectionnés seront imprimés. Laisser vide pour imprimer tous les comptes."
+
+#. module: account_report_csv
+#: model:ir.model,name:account_report_csv.model_trial_balance_csv
+msgid "Trial Balance Report"
+msgstr "Rapport de Balance générale"
+
+#. module: account_report_csv
+#: view:general.ledger.csv:0
+#: view:trial.balance.csv:0
+msgid "[('fiscalyear_id', '=',\n"
+"                            fiscalyear_id), ('special', '=', False)]"
+msgstr "[('fiscalyear_id', '=',\n"
+"                            fiscalyear_id), ('special', '=', False)]"
+
+#. module: account_report_csv
+#: view:general.ledger.csv:0
+#: view:trial.balance.csv:0
+msgid "Time Filters"
+msgstr "Filtres de temps"
+
+#. module: account_report_csv
+#: view:general.ledger.csv:0
+msgid "General Ledger"
+msgstr "Grand Livre"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,csv_delimiter:0
+#: field:trial.balance.csv,csv_delimiter:0
+msgid "CSV delimiter"
+msgstr "Délimiteur CSV"
+
+#. module: account_report_csv
+#: view:trial.balance.csv:0
+msgid "Trial Balance"
+msgstr "Balance Générale"
+
+#. module: account_report_csv
+#: view:trial.balance.csv:0
+msgid "This report allows you to print or generate a pdf of your trial balance allowing you to quickly check the balance of each of your accounts in a single report"
+msgstr "Ce rapport vous permet d'imprimer ou de générer un pdf de votre balance générale vous permettant de vérifier rapidement la balance de chacun de vos comptes en un seul rapport"
+
+#. module: account_report_csv
+#: view:general.ledger.csv:0
+#: view:trial.balance.csv:0
+msgid "Export as CSV"
+msgstr "Exporter en CSV"
+
+#. module: account_report_csv
+#: view:general.ledger.csv:0
+#: view:trial.balance.csv:0
+msgid "Only show transactions initiated in the selected currency; leave empty to show base amounts."
+msgstr "Afficher uniquement les transactions effectuées dans la devise sélectionnée ; laisser vide pour afficher les montants de base."
+
+#. module: account_report_csv
+#: selection:general.ledger.csv,filter:0
+#: selection:trial.balance.csv,comp0_filter:0
+#: selection:trial.balance.csv,comp1_filter:0
+#: selection:trial.balance.csv,comp2_filter:0
+#: selection:trial.balance.csv,filter:0
+msgid "Periods"
+msgstr "Périodes"
+
+#. module: account_report_csv
+#: help:trial.balance.csv,filter:0
+msgid "Filter by date: no opening balance will be displayed. (opening balance can only be computed based on period to be correct)."
+msgstr "Filter by date: no opening balance will be displayed. (opening balance can only be computed based on period to be correct)."
+
+#. module: account_report_csv
+#: field:general.ledger.csv,company_id:0
+#: field:trial.balance.csv,company_id:0
+msgid "Company"
+msgstr "Société"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,amount_currency:0
+msgid "With Currency"
+msgstr "Avec devise"
+
+#. module: account_report_csv
+#: selection:general.ledger.csv,display_account:0
+msgid "With transactions or non zero balance"
+msgstr "Comptes mouvementés ou avec un solde qui n'est pas nul"
+
+#. module: account_report_csv
+#: view:general.ledger.csv:0
+#: view:trial.balance.csv:0
+msgid "Currency Filter"
+msgstr "Filtre par devise"
+
+#. module: account_report_csv
+#: view:general.ledger.csv:0
+msgid "This report allows you to print or generate a pdf of your general ledger with details of all your account journals"
+msgstr "Ce rapport vous permet d'imprimer ou de générer un pdf de votre grand livre avec les détails de tous vos journaux de comptes"
+
+#. module: account_report_csv
+#: selection:trial.balance.csv,display_account:0
+msgid "With balance is not equal to 0"
+msgstr "Avec une balance non égale à 0"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,name:0
+#: field:trial.balance.csv,name:0
+msgid "Export name"
+msgstr "Nom de l'export"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,currency_id:0
+#: field:trial.balance.csv,currency_id:0
+msgid "Filter on currencies"
+msgstr "Filtre sur la devise"
+
+#. module: account_report_csv
+#: selection:general.ledger.csv,filter:0
+#: selection:trial.balance.csv,comp0_filter:0
+#: selection:trial.balance.csv,comp1_filter:0
+#: selection:trial.balance.csv,comp2_filter:0
+#: selection:trial.balance.csv,filter:0
+msgid "Date"
+msgstr "Date"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,date_from:0
+#: field:trial.balance.csv,comp0_date_from:0
+#: field:trial.balance.csv,comp1_date_from:0
+#: field:trial.balance.csv,comp2_date_from:0
+#: field:trial.balance.csv,date_from:0
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,chart_account_id:0
+#: field:trial.balance.csv,chart_account_id:0
+msgid "Chart of Account"
+msgstr "Plan Comptable"
+
+#. module: account_report_csv
+#: view:trial.balance.csv:0
+msgid "{'required': [('filter', '=',\n"
+"                            'filter_opening')]}"
+msgstr "{'required': [('filter', '=',\n"
+"                            'filter_opening')]}"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,journal_ids:0
+#: field:trial.balance.csv,journal_ids:0
+msgid "Journals"
+msgstr "Journaux"
+
+#. module: account_report_csv
+#: view:general.ledger.csv:0
+#: view:trial.balance.csv:0
+msgid "Layout Options"
+msgstr "Options d'affichage"
+
+#. module: account_report_csv
+#: selection:general.ledger.csv,filter:0
+#: selection:trial.balance.csv,filter:0
+msgid "No Filters"
+msgstr "Sans filtres"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,account_to:0
+#: field:trial.balance.csv,account_to:0
+msgid "To account"
+msgstr "Au compte"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,date_to:0
+#: field:trial.balance.csv,comp0_date_to:0
+#: field:trial.balance.csv,comp1_date_to:0
+#: field:trial.balance.csv,comp2_date_to:0
+#: field:trial.balance.csv,date_to:0
+msgid "End Date"
+msgstr "Date de fin"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,ledger_type:0
+#: field:trial.balance.csv,ledger_type:0
+msgid "Ledger type"
+msgstr "Type de budget"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,period_from:0
+#: field:trial.balance.csv,comp0_period_from:0
+#: field:trial.balance.csv,comp1_period_from:0
+#: field:trial.balance.csv,comp2_period_from:0
+#: field:trial.balance.csv,period_from:0
+msgid "Start Period"
+msgstr "Période de début"
+
+#. module: account_report_csv
+#: view:general.ledger.csv:0
+#: view:trial.balance.csv:0
+msgid "The CSV file has been successfully generated."
+msgstr "Le fichier CSV a été généré avec succès."
+
+#. module: account_report_csv
+#: view:general.ledger.csv:0
+#: view:trial.balance.csv:0
+msgid "Print only"
+msgstr "Imprimer seulement"
+
+#. module: account_report_csv
+#: selection:general.ledger.csv,target_move:0
+#: selection:trial.balance.csv,target_move:0
+msgid "All Posted Entries"
+msgstr "Toutes les entrées postées"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,csv_quotechar:0
+#: field:trial.balance.csv,csv_quotechar:0
+msgid "CSV quote character"
+msgstr "Caractère de texte CSV"
+
+#. module: account_report_csv
+#: help:general.ledger.csv,fiscalyear_id:0
+#: help:trial.balance.csv,fiscalyear_id:0
+msgid "Keep empty for all open fiscal year"
+msgstr "Laisser vide pour toutes les années fiscales ouvertes"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,period_to:0
+#: field:trial.balance.csv,comp0_period_to:0
+#: field:trial.balance.csv,comp1_period_to:0
+#: field:trial.balance.csv,comp2_period_to:0
+#: field:trial.balance.csv,period_to:0
+msgid "End Period"
+msgstr "Période de fin"
+
+#. module: account_report_csv
+#: selection:general.ledger.csv,allocated:0
+msgid "Not allocated"
+msgstr "Non lettré"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,fiscalyear_id:0
+#: selection:trial.balance.csv,comp0_filter:0
+#: field:trial.balance.csv,comp0_fiscalyear_id:0
+#: selection:trial.balance.csv,comp1_filter:0
+#: field:trial.balance.csv,comp1_fiscalyear_id:0
+#: selection:trial.balance.csv,comp2_filter:0
+#: field:trial.balance.csv,comp2_fiscalyear_id:0
+#: field:trial.balance.csv,fiscalyear_id:0
+msgid "Fiscal Year"
+msgstr "Année fiscale"
+
+#. module: account_report_csv
+#: view:general.ledger.csv:0
+#: view:trial.balance.csv:0
+msgid "True"
+msgstr "True"
+
+#. module: account_report_csv
+#: field:trial.balance.csv,display_account:0
+msgid "Display Accounts"
+msgstr "Comptes à afficher"
+
+#. module: account_report_csv
+#: help:general.ledger.csv,centralize:0
+msgid "Uncheck to display all the details of centralized accounts."
+msgstr "Décocher pour afficher tout les détails des comptes centralisés."
+
+#. module: account_report_csv
+#: selection:trial.balance.csv,comp0_filter:0
+#: selection:trial.balance.csv,comp1_filter:0
+#: selection:trial.balance.csv,comp2_filter:0
+msgid "No Comparison"
+msgstr "Pas de comparaison"
+
+#. module: account_report_csv
+#: selection:trial.balance.csv,comp0_filter:0
+#: selection:trial.balance.csv,comp1_filter:0
+#: selection:trial.balance.csv,comp2_filter:0
+#: selection:trial.balance.csv,filter:0
+msgid "Opening Only"
+msgstr "Seulement les ouvertures"
+
+#. module: account_report_csv
+#: field:trial.balance.csv,include_zero:0
+msgid "Include accounts at 0"
+msgstr "Inclure les comptes à 0"
+
+#. module: account_report_csv
+#: code:addons/account_report_csv/wizard/trial_balance_csv_wizard.py:87
+#: model:ir.actions.act_window,name:account_report_csv.action_account_trial_balance_csv_menu
+#: model:ir.ui.menu,name:account_report_csv.menu_trial_balance_csv
+#: view:trial.balance.csv:0
+#, python-format
+msgid "Trial Balance Export"
+msgstr "Export de balance générale"
+
+#. module: account_report_csv
+#: selection:trial.balance.csv,display_account:0
+msgid "With movements"
+msgstr "Avec mouvements"
+
+#. module: account_report_csv
+#: selection:general.ledger.csv,allocated:0
+#: selection:general.ledger.csv,display_account:0
+#: selection:trial.balance.csv,display_account:0
+msgid "All"
+msgstr "Tous"
+
+#. module: account_report_csv
+#: selection:general.ledger.csv,allocated:0
+msgid "Partial"
+msgstr "Partiel"
+
+#. module: account_report_csv
+#: model:ir.ui.menu,name:account_report_csv.finance_reports_csv_menu
+msgid "Legal Reports Export"
+msgstr "Export des rapports officiels"
+
+#. module: account_report_csv
+#: help:general.ledger.csv,ledger_type:0
+#: help:trial.balance.csv,ledger_type:0
+msgid "Ledger selection: only accounts defined for the selected ledger will be printed; or accounts in the actual ledger if this is left unselected."
+msgstr "Ledger selection: only accounts defined for the selected ledger will be printed; or accounts in the actual ledger if this is left unselected."
+
+#. module: account_report_csv
+#: view:general.ledger.csv:0
+#: view:trial.balance.csv:0
+msgid "Accounts Filters"
+msgstr "Filtres par compte"
+
+#. module: account_report_csv
+#: code:addons/account_report_csv/wizard/general_ledger_csv_wizard.py:136
+#: view:general.ledger.csv:0
+#: model:ir.actions.act_window,name:account_report_csv.action_account_general_ledger_csv_menu
+#: model:ir.ui.menu,name:account_report_csv.menu_general_ledger_csv
+#, python-format
+msgid "General Ledger Export"
+msgstr "Export de grand livre"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,target_move:0
+#: field:trial.balance.csv,target_move:0
+msgid "Target Moves"
+msgstr "Mouvement cibles"
+
+#. module: account_report_csv
+#: model:ir.model,name:account_report_csv.model_general_ledger_csv
+msgid "General Ledger Report"
+msgstr "Rapport de Grand livre"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,data:0
+#: field:trial.balance.csv,data:0
+msgid "Export"
+msgstr "Export"
+
+#. module: account_report_csv
+#: selection:general.ledger.csv,target_move:0
+#: selection:trial.balance.csv,target_move:0
+msgid "All Entries"
+msgstr "Toutes les entrées"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,display_account:0
+msgid "Display accounts"
+msgstr "Comptes à afficher"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,ledger_type_available:0
+#: field:trial.balance.csv,ledger_type_available:0
+msgid "unknown"
+msgstr "inconnu"
+
+#. module: account_report_csv
+#: view:general.ledger.csv:0
+#: view:trial.balance.csv:0
+msgid "Close"
+msgstr "Fermer"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,allocated:0
+#: selection:general.ledger.csv,allocated:0
+msgid "Allocated"
+msgstr "Lettré"
+
+#. module: account_report_csv
+#: help:general.ledger.csv,chart_account_id:0
+#: help:trial.balance.csv,chart_account_id:0
+msgid "Select Charts of Accounts"
+msgstr "Selectionner le plan comptable"
+
+#. module: account_report_csv
+#: field:general.ledger.csv,filter:0
+#: field:trial.balance.csv,filter:0
+msgid "Filter by"
+msgstr "Filtrer par"
+
+#. module: account_report_csv
+#: field:trial.balance.csv,comp0_filter:0
+#: field:trial.balance.csv,comp1_filter:0
+#: field:trial.balance.csv,comp2_filter:0
+msgid "Compare By"
+msgstr "Comparer sur"
+
