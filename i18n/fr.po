@@ -19,7 +19,7 @@ msgstr ""
 #: field:general.ledger.csv,analytic_codes:0
 #: field:trial.balance.csv,analytic_codes:0
 msgid "Ouput element"
-msgstr "Élement de sortie"
+msgstr "Élément de sortie"
 
 #. module: account_report_csv
 #: field:general.ledger.csv,account_ids:0
