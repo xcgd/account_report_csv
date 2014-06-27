@@ -34,6 +34,7 @@ Provides the usual filters (by account, period, currency, etc).
     """,
     "depends": [
         'account_report_webkit',
+        'analytic_structure',
     ],
     "data": [
         'wizard/general_ledger_csv_wizard_view.xml',
