@@ -14,14 +14,14 @@ Export General Ledger/Trial Balance as CSV
 
 Provides ability to filter data by:
 
-	* Accounts:
+* Accounts:
  ![Create](static/src/img/export2.jpg)
 
-	* Currency:
+* Currency:
  ![Create](static/src/img/export4.jpg)
 
-	* Period
+* Period
 
 Then Export your selected data in CSV:
 
-* ![Create](static/src/img/csv.jpg)
+ ![Create](static/src/img/csv.jpg)
