@@ -3,6 +3,8 @@
 
 ### Export reports as CSV for Odoo/OpenERP ###
 
+* You can find a sample implementation at :
+* http://www.xcg-consulting.fr/blog/export-des-rapports-officiels-sur-odoo/
 
 ### Main Improvements ###
 
