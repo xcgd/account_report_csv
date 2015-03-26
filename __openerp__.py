@@ -21,7 +21,7 @@
 
 {
     "name": "Account Report CSV",
-    "version": "1.2",
+    "version": "1.3",
     "author": "XCG Consulting",
     "website": "http://www.openerp-experts.com",
     "category": 'Accounting',
